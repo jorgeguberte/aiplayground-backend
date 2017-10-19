@@ -7,7 +7,7 @@ fastify.get('/', function(req, rep){
 
 fastify.get('/experiments/list', (req, rep)=>{
     //#TODO: Fetch this from a json or yaml file
-    let experiments = [
+    var experiments = [
         {
             title: 'Genetic Algorithms',
             kernels:[
