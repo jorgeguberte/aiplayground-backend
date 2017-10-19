@@ -1,5 +1,7 @@
 const fastify = require('fastify')();
 
+var port = process.env.PORT || 8080;
+
 fastify.get('/', function(req, rep){
     rep.send({hello: 'worlds!'});
 });
@@ -32,7 +34,7 @@ fastify.get('/experiments/list', (req, rep)=>{
         .send(experiments);
 });
 
-fastify.listen(3000, function(err){
+fastify.listen(port, function(err){
     if(err) throw err
     console.log(`Server listening on ${fastify.server.address().port}`);
 })
